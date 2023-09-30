@@ -5,6 +5,10 @@ main() => runApp(const Leveler());
 class Leveler extends StatelessWidget {
   const Leveler({super.key});
 
+  void respond() {
+    print('The question has been answered');
+  }
+
   @override
   Widget build(BuildContext context) {
     final questions = [
@@ -21,21 +25,21 @@ class Leveler extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Text(questions[0]),
-                const ElevatedButton(
-                  onPressed: null,
-                  child: Text('Anwser 1'),
+                ElevatedButton(
+                  onPressed: respond,
+                  child: const Text('Anwser 1'),
                 ),
-                const ElevatedButton(
-                  onPressed: null,
-                  child: Text('Anwser 2'),
+                ElevatedButton(
+                  onPressed: respond,
+                  child: const Text('Anwser 2'),
                 ),
-                const ElevatedButton(
-                  onPressed: null,
-                  child: Text('Anwser 3'),
+                ElevatedButton(
+                  onPressed: respond,
+                  child: const Text('Anwser 3'),
                 ),
-                const ElevatedButton(
-                  onPressed: null,
-                  child: Text('Anwser 4'),
+                ElevatedButton(
+                  onPressed: respond,
+                  child: const Text('Anwser 4'),
                 )
               ],
             ),
