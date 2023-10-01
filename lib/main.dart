@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import './question.dart';
 
-main() => runApp(Leveler());
+main() => runApp(const Leveler());
 
 class _LevelerAppState extends State<Leveler> {
   var _answerSelected = 0;
@@ -26,7 +27,7 @@ class _LevelerAppState extends State<Leveler> {
           body: Center(
             child: Column(
               children: <Widget>[
-                Text(questions[_answerSelected]),
+                Question(questions[_answerSelected]),
                 ElevatedButton(
                   onPressed: _respond,
                   child: const Text('Anwser 1'),
