@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 main() => runApp(Leveler());
 
-class LevelerAppState extends State<Leveler> {
-  var answerSelected = 0;
-  void respond() {
+class _LevelerAppState extends State<Leveler> {
+  var _answerSelected = 0;
+  void _respond() {
     setState(() {
-      answerSelected++;
+      _answerSelected++;
     });
     print('The question has been answered');
   }
@@ -26,21 +26,21 @@ class LevelerAppState extends State<Leveler> {
           body: Center(
             child: Column(
               children: <Widget>[
-                Text(questions[answerSelected]),
+                Text(questions[_answerSelected]),
                 ElevatedButton(
-                  onPressed: respond,
+                  onPressed: _respond,
                   child: const Text('Anwser 1'),
                 ),
                 ElevatedButton(
-                  onPressed: respond,
+                  onPressed: _respond,
                   child: const Text('Anwser 2'),
                 ),
                 ElevatedButton(
-                  onPressed: respond,
+                  onPressed: _respond,
                   child: const Text('Anwser 3'),
                 ),
                 ElevatedButton(
-                  onPressed: respond,
+                  onPressed: _respond,
                   child: const Text('Anwser 4'),
                 )
               ],
@@ -53,7 +53,7 @@ class LevelerAppState extends State<Leveler> {
 class Leveler extends StatefulWidget {
   const Leveler({super.key});
 
-  LevelerAppState createState() {
-    return LevelerAppState();
+  _LevelerAppState createState() {
+    return _LevelerAppState();
   }
 }
