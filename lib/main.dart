@@ -5,7 +5,9 @@ main() => runApp(Leveler());
 class LevelerAppState extends State<Leveler> {
   var answerSelected = 0;
   void respond() {
-    answerSelected++;
+    setState(() {
+      answerSelected++;
+    });
     print('The question has been answered');
   }
 
@@ -24,7 +26,7 @@ class LevelerAppState extends State<Leveler> {
           body: Center(
             child: Column(
               children: <Widget>[
-                Text(questions[0]),
+                Text(questions[answerSelected]),
                 ElevatedButton(
                   onPressed: respond,
                   child: const Text('Anwser 1'),
