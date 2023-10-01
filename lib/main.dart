@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-main() => runApp(const Leveler());
+main() => runApp(Leveler());
 
-class Leveler extends StatelessWidget {
-  const Leveler({super.key});
-
+class LevelerAppState extends State<Leveler> {
+  var answerSelected = 0;
   void respond() {
+    answerSelected++;
     print('The question has been answered');
   }
 
@@ -45,5 +45,13 @@ class Leveler extends StatelessWidget {
             ),
           )),
     );
+  }
+}
+
+class Leveler extends StatefulWidget {
+  const Leveler({super.key});
+
+  LevelerAppState createState() {
+    return LevelerAppState();
   }
 }
