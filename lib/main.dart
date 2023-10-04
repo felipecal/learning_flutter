@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './question.dart';
+import './answer.dart';
 
 main() => runApp(const Leveler());
 
@@ -9,7 +10,6 @@ class _LevelerAppState extends State<Leveler> {
     setState(() {
       _answerSelected++;
     });
-    print('The question has been answered');
   }
 
   @override
@@ -21,32 +21,19 @@ class _LevelerAppState extends State<Leveler> {
 
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Which level am i ?'),
-          ),
-          body: Center(
-            child: Column(
-              children: <Widget>[
-                Question(questions[_answerSelected]),
-                ElevatedButton(
-                  onPressed: _respond,
-                  child: const Text('Anwser 1'),
-                ),
-                ElevatedButton(
-                  onPressed: _respond,
-                  child: const Text('Anwser 2'),
-                ),
-                ElevatedButton(
-                  onPressed: _respond,
-                  child: const Text('Anwser 3'),
-                ),
-                ElevatedButton(
-                  onPressed: _respond,
-                  child: const Text('Anwser 4'),
-                )
-              ],
-            ),
-          )),
+        appBar: AppBar(
+          title: const Text('Which level am i ?'),
+        ),
+        body: Column(
+          children: <Widget>[
+            Question(questions[_answerSelected]),
+            Answer('Answer 1', _respond), // ElevatedButton(
+            Answer('Answer 2', _respond), // ElevatedButton(
+            Answer('Answer 3', _respond), // ElevatedButton(
+            Answer('Answer 4', _respond), // ElevatedButton(
+          ],
+        ),
+      ),
     );
   }
 }
